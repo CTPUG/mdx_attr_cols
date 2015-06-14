@@ -6,7 +6,6 @@
 # Packages
 *.egg
 *.egg-info
-bower_components/
 dist
 build
 eggs
@@ -26,6 +25,7 @@ pip-log.txt
 .coverage
 .tox
 nosetests.xml
+.cache
 
 # Translations
 *.mo
