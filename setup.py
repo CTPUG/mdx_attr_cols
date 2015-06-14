@@ -12,7 +12,7 @@ with open('README.rst', 'r') as f:
 
 setup(
     name="mdx_attr_cols",
-    version="0.1.0",
+    version="0.1.0a",
     url='http://github.com/CTPUG/mdx_attr_cols',
     license='MIT',
     description="A bootstrap 3 row and columns extension for Markdown",
