@@ -37,6 +37,7 @@ class AttrColTreeProcessor(Treeprocessor):
                     row, row_cols = None, 0
                 continue
             cols = int(child.attrib[self.attr])
+            del child.attrib[self.attr]
 
             if row is None:
                 row = etree.Element("div", {"class": "row"})
