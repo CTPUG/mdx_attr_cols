@@ -7,7 +7,7 @@ from markdown.treeprocessors import Treeprocessor
 
 
 class AttrColTreeProcessor(Treeprocessor):
-    """ The attr_col element tree processor. """
+    """ The attr_cols element tree processor. """
 
     CONF_DEFAULTS = {
         'columns': 12,
@@ -60,7 +60,7 @@ class AttrColTreeProcessor(Treeprocessor):
 
 
 class AttrColExtension(Extension):
-    """ The attr_col markdown extension. """
+    """ The attr_cols markdown extension. """
 
     REQUIRED_EXTENSIONS = ('attr_list', 'outline')
 
@@ -75,9 +75,9 @@ class AttrColExtension(Extension):
                 " extensions which must preceded it in the extension"
                 " list: %s" % ", ".join(self.REQUIRED_EXTENSIONS))
         processor = AttrColTreeProcessor(md, self.conf)
-        md.treeprocessors.add('attr_col', processor, '_end')
+        md.treeprocessors.add('attr_cols', processor, '_end')
 
 
 def makeExtension(configs=None):
-    """ Initialize the attr_col extension. """
+    """ Initialize the attr_cols extension. """
     return AttrColExtension(configs=configs)
