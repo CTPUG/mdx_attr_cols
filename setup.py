@@ -1,4 +1,4 @@
-from setuptools import find_packages, setup
+from setuptools import setup
 
 REQUIRES = [
     'markdown',
@@ -19,8 +19,9 @@ setup(
     long_description=long_description,
     author='CTPUG',
     author_email='ctpug@googlegroups.com',
-    packages=find_packages(),
-    include_package_data=True,
+    py_modules=[
+        'mdx_attr_cols',
+    ],
     install_requires=REQUIRES,
     dependency_links=SOURCES,
     setup_requires=[
