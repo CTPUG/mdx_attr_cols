@@ -18,7 +18,7 @@ class AttrColTreeProcessor(Treeprocessor):
     def __init__(self, md, conf):
         super(AttrColTreeProcessor, self).__init__(md)
         conf_vars = self.CONF_DEFAULTS.copy()
-        conf_vars.update(conf)
+        conf_vars.update(conf or {})
         self.columns = int(conf_vars.get('columns'))
         self.attr = str(conf_vars.get('attr'))
         self.tags = set(conf_vars.get('tags'))

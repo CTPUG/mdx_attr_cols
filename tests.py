@@ -24,6 +24,13 @@ class TestAttrColTreeProcessor(XmlTestCaseMixin, TestCase):
         md = Markdown()
         return AttrColTreeProcessor(md, conf)
 
+    def test_config_none(self):
+        md = Markdown
+        p = AttrColTreeProcessor(md, None)
+        self.assertEqual(p.columns, 12)
+        self.assertEqual(p.attr, 'cols')
+        self.assertEqual(p.tags, set(['section']))
+
     def test_config_defaults(self):
         p = self.mk_processor()
         self.assertEqual(p.columns, 12)
