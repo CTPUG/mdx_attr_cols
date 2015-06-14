@@ -40,7 +40,9 @@ Documentation
 Allows creating bootstrap container rows and columns using section
 attributes as provided by the attr_list and outline extensions.
 
-Markdown example::
+Markdown example:
+
+.. code:: markdown
 
   Header 1 {: cols=6 }
   ====================
@@ -62,7 +64,9 @@ Markdown example::
 
   This is not in a row or column.
 
-Python usage::
+Python usage:
+
+.. code:: python
 
   md = markdown.Markdown(
       extensions=[
@@ -80,7 +84,7 @@ Python usage::
 
 Configuration options:
 
-* columns: Number of columns in a row. Default is 12.
-* tags: List of HTML tags to look for attributes on. Default is
-  ['sections'].
-* attr: Name of column width attribute. Default is 'cols'.
+* ``columns``: Number of columns in a row. Default is ``12``.
+* ``tags``: List of HTML tags to look for attributes on. Default is
+  ``['sections']``.
+* ``attr``: Name of column width attribute. Default is ``'cols'``.
