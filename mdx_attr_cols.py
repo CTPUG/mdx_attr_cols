@@ -78,6 +78,6 @@ class AttrColExtension(Extension):
         md.treeprocessors.add('attr_cols', processor, '_end')
 
 
-def makeExtension(configs=None):
+def makeExtension(**kwargs):
     """ Initialize the attr_cols extension. """
-    return AttrColExtension(configs=configs)
+    return AttrColExtension(configs=kwargs)

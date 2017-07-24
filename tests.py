@@ -116,6 +116,6 @@ class TestAttrColExtension(TestCase):
 class TestExtensionRegistration(TestCase):
     def test_make_extension(self):
         configs = {'a': 'b'}
-        ext = makeExtension(configs)
+        ext = makeExtension(**configs)
         self.assertTrue(isinstance(ext, AttrColExtension))
         self.assertEqual(ext.conf, configs)
