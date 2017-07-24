@@ -11,7 +11,7 @@ with open('README.rst', 'r') as f:
     long_description = f.read()
 
 setup(
-    name="mdx_attr_cols",
+    name="mdx-attr-cols",
     version="0.1.1",
     url='http://github.com/CTPUG/mdx_attr_cols',
     license='MIT',
