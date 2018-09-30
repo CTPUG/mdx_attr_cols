@@ -78,7 +78,9 @@ class AttrColExtension(Extension):
                 " extensions which must preceded it in the extension"
                 " list: %s" % ", ".join(self.REQUIRED_EXTENSIONS))
         processor = AttrColTreeProcessor(md, self.conf)
-        md.treeprocessors.add('attr_cols', processor, '_end')
+        md.treeprocessors.register(
+            processor, 'attr_cols',
+            5)  # 5 is the lowest priority
 
 
 def makeExtension(**kwargs):
