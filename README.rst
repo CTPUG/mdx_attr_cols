@@ -22,10 +22,10 @@ The mdx_attr_cols plugin requires the following additional Markdown
 plugins:
 
 *  `attr_list`_ (built-in to the markdown library)
-*  `outline`_
+*  `mdx_outline`_
 
 .. _attr_list: http://pythonhosted.org/Markdown/extensions/attr_list.html
-.. _outline: https://pypi.python.org/pypi/mdx_outline
+.. _mdx_outline: https://pypi.python.org/pypi/mdx_outline
 
 
 Installation
@@ -38,7 +38,7 @@ Documentation
 =============
 
 Allows creating bootstrap container rows and columns using section
-attributes as provided by the attr_list and outline extensions.
+attributes as provided by the attr_list and mdx_outline extensions.
 
 Markdown example:
 
@@ -70,7 +70,7 @@ Python usage:
 
   md = markdown.Markdown(
       extensions=[
-          'outline',
+          'mdx_outline',
           'attr_list',
           'attr_cols',
       ],
