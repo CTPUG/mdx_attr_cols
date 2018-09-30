@@ -97,7 +97,7 @@ class TestAttrColExtension(TestCase):
             RuntimeError,
             "The attr_cols markdown extension depends the following"
             " extensions which must preceded it in the extension list:"
-            " attr_list, outline",
+            " attr_list, mdx_outline",
             ext.extendMarkdown, md, md_globals)
         self.assert_not_registered(md, md_globals)
 
@@ -108,7 +108,7 @@ class TestAttrColExtension(TestCase):
             RuntimeError,
             "The attr_cols markdown extension depends the following"
             " extensions which must preceded it in the extension list:"
-            " attr_list, outline",
+            " attr_list, mdx_outline",
             ext.extendMarkdown, md, md_globals)
         self.assert_not_registered(md, md_globals)
 

@@ -62,14 +62,17 @@ class AttrColTreeProcessor(Treeprocessor):
 class AttrColExtension(Extension):
     """ The attr_cols markdown extension. """
 
-    REQUIRED_EXTENSIONS = ('attr_list', 'outline')
+    REQUIRED_EXTENSIONS = ('attr_list', 'mdx_outline')
+    REQUIRED_EXTENSION_INTERNAL_NAMES = ('attr_list', 'outline')
 
     def __init__(self, configs):
         self.conf = configs
 
     def extendMarkdown(self, md, md_globals):
         """Initializes markdown extension components."""
-        if any(x not in md.treeprocessors for x in self.REQUIRED_EXTENSIONS):
+        if any(
+                x not in md.treeprocessors
+                for x in self.REQUIRED_EXTENSION_INTERNAL_NAMES):
             raise RuntimeError(
                 "The attr_cols markdown extension depends the following"
                 " extensions which must preceded it in the extension"
