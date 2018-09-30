@@ -66,8 +66,8 @@ class TestAttrColTreeProcessor(XmlTestCaseMixin, TestCase):
 class TestAttrColExtension(TestCase):
     def mk_markdown(self, extensions=None):
         if extensions is None:
-            extensions = ['attr_list', 'outline']
-        md = Markdown(extensions)
+            extensions = ['attr_list', 'mdx_outline']
+        md = Markdown(extensions=extensions)
         md_globals = {}
         return md, md_globals
 
@@ -91,7 +91,7 @@ class TestAttrColExtension(TestCase):
         self.assert_registered(md, md_globals)
 
     def test_missing_attr_list(self):
-        md, md_globals = self.mk_markdown(['outline'])
+        md, md_globals = self.mk_markdown(['mdx_outline'])
         ext = AttrColExtension({})
         self.assertRaisesRegexp(
             RuntimeError,
