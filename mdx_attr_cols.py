@@ -68,7 +68,7 @@ class AttrColExtension(Extension):
     def __init__(self, configs):
         self.conf = configs
 
-    def extendMarkdown(self, md, md_globals):
+    def extendMarkdown(self, md, md_globals=None):
         """Initializes markdown extension components."""
         if any(
                 x not in md.treeprocessors

@@ -68,49 +68,46 @@ class TestAttrColExtension(TestCase):
         if extensions is None:
             extensions = ['attr_list', 'mdx_outline']
         md = Markdown(extensions=extensions)
-        md_globals = {}
-        return md, md_globals
+        return md
 
-    def assert_registered(self, md, md_globals):
+    def assert_registered(self, md):
         processor = md.treeprocessors['attr_cols']
         self.assertTrue(isinstance(processor, AttrColTreeProcessor))
-        self.assertEqual(md_globals, {})
 
-    def assert_not_registered(self, md, md_globals):
+    def assert_not_registered(self, md):
         self.assertFalse('attr_cols' in md.treeprocessors)
-        self.assertEqual(md_globals, {})
 
     def text_create(self):
         ext = AttrColExtension({'a': 'b'})
         self.assertEqual(ext.conf, {'a': 'b'})
 
     def test_extend_markdown(self):
-        md, md_globals = self.mk_markdown()
+        md = self.mk_markdown()
         ext = AttrColExtension({})
-        ext.extendMarkdown(md, md_globals)
-        self.assert_registered(md, md_globals)
+        ext.extendMarkdown(md)
+        self.assert_registered(md)
 
     def test_missing_attr_list(self):
-        md, md_globals = self.mk_markdown(['mdx_outline'])
+        md = self.mk_markdown(['mdx_outline'])
         ext = AttrColExtension({})
         self.assertRaisesRegexp(
             RuntimeError,
             "The attr_cols markdown extension depends the following"
             " extensions which must preceded it in the extension list:"
             " attr_list, mdx_outline",
-            ext.extendMarkdown, md, md_globals)
-        self.assert_not_registered(md, md_globals)
+            ext.extendMarkdown, md)
+        self.assert_not_registered(md)
 
     def test_missing_outline(self):
-        md, md_globals = self.mk_markdown([])
+        md = self.mk_markdown([])
         ext = AttrColExtension({})
         self.assertRaisesRegexp(
             RuntimeError,
             "The attr_cols markdown extension depends the following"
             " extensions which must preceded it in the extension list:"
             " attr_list, mdx_outline",
-            ext.extendMarkdown, md, md_globals)
-        self.assert_not_registered(md, md_globals)
+            ext.extendMarkdown, md)
+        self.assert_not_registered(md)
 
 
 class TestExtensionRegistration(TestCase):
