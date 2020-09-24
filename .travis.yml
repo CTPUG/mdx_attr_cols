@@ -2,12 +2,11 @@ language: python
 dist: trusty
 matrix:
   include:
-    - { python: "2.7" }
-    - { python: "3.4" }
     - { python: "3.5" }
     - { python: "3.6" }
     - { python: "3.7", dist: xenial, sudo: true }  # Python 3.7+ requires Xenial
+    - { python: "3.8", dist: xenial, sudo: true }  # Python 3.7+ requires Xenial
 install:
    - pip install -r requirements.txt -r requirements-dev.txt
 script:
-   - py.test --cache-clear --flake8 mdx_attr_cols.py tests.py
+   - pytest --cache-clear --flake8 mdx_attr_cols.py tests.py
