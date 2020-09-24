@@ -10,4 +10,4 @@ matrix:
 install:
    - pip install -r requirements.txt -r requirements-dev.txt
 script:
-   - py.test --cache-clear --flake8 mdx_attr_cols.py tests.py
+   - pytest --cache-clear --flake8 mdx_attr_cols.py tests.py
