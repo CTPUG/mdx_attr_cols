@@ -3,10 +3,10 @@ mdx_attr_cols
 
 |attr-cols-ci-badge|
 
-.. |attr-cols-ci-badge| image:: https://travis-ci.org/CTPUG/mdx_attr_cols.png?branch=master
-    :alt: Travis CI build status
+.. |attr-cols-ci-badge| image:: https://github.com/CTPUG/mdx_attr_cols/actions/workflows/tests.yml/badge.svg
+    :alt: GitHub Actions CI status
     :scale: 100%
-    :target: https://travis-ci.org/CTPUG/mdx_attr_cols
+    :target: https://github.com/CTPUG/mdx_attr_cols/actions/workflows/tests.yml
 
 A Markdown extension to add support for Bootstrap 3 rows and columns.
 
