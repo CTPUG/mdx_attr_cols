@@ -1,9 +1,9 @@
 from unittest import TestCase
+from xml.etree import ElementTree as etree
 
 import xmltodict
 
 from markdown import Markdown
-from markdown.util import etree
 
 from mdx_attr_cols import AttrColTreeProcessor, AttrColExtension, makeExtension
 
@@ -90,7 +90,7 @@ class TestAttrColExtension(TestCase):
     def test_missing_attr_list(self):
         md = self.mk_markdown(['mdx_outline'])
         ext = AttrColExtension({})
-        self.assertRaisesRegexp(
+        self.assertRaisesRegex(
             RuntimeError,
             "The attr_cols markdown extension depends the following"
             " extensions which must preceded it in the extension list:"
@@ -101,7 +101,7 @@ class TestAttrColExtension(TestCase):
     def test_missing_outline(self):
         md = self.mk_markdown([])
         ext = AttrColExtension({})
-        self.assertRaisesRegexp(
+        self.assertRaisesRegex(
             RuntimeError,
             "The attr_cols markdown extension depends the following"
             " extensions which must preceded it in the extension list:"
