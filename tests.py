@@ -1,9 +1,9 @@
 from unittest import TestCase
+import xml.etree.ElementTree as etree
 
 import xmltodict
 
 from markdown import Markdown
-from markdown.util import etree
 
 from mdx_attr_cols import AttrColTreeProcessor, AttrColExtension, makeExtension
 
