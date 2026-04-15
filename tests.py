@@ -90,7 +90,7 @@ class TestAttrColExtension(TestCase):
     def test_missing_attr_list(self):
         md = self.mk_markdown(['mdx_outline'])
         ext = AttrColExtension({})
-        self.assertRaisesRegexp(
+        self.assertRaisesRegex(
             RuntimeError,
             "The attr_cols markdown extension depends the following"
             " extensions which must preceded it in the extension list:"
@@ -101,7 +101,7 @@ class TestAttrColExtension(TestCase):
     def test_missing_outline(self):
         md = self.mk_markdown([])
         ext = AttrColExtension({})
-        self.assertRaisesRegexp(
+        self.assertRaisesRegex(
             RuntimeError,
             "The attr_cols markdown extension depends the following"
             " extensions which must preceded it in the extension list:"
