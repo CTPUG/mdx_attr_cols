@@ -2,7 +2,7 @@ from setuptools import setup
 
 REQUIRES = [
     "markdown",
-    "mdx_outline",
+    "mdx_outline @ git+https://github.com/aleray/mdx_outline.git",
 ]
 
 SOURCES = []
