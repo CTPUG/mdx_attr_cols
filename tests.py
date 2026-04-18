@@ -1,5 +1,5 @@
 from unittest import TestCase
-from xml.etree import ElementTree as etree
+import xml.etree.ElementTree as etree
 
 import xmltodict
 

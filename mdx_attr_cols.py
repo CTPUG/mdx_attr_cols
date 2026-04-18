@@ -1,7 +1,7 @@
 """ Bootstrap 3 grid extension fo Python Markdown
 """
 
-from xml.etree import ElementTree as etree
+import xml.etree.ElementTree as etree
 
 from markdown import Extension
 from markdown.treeprocessors import Treeprocessor
